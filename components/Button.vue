@@ -1,20 +1,26 @@
 <template>
-<button class="button is-link" @keydown[alph]="keyToDelete"> {{ alph }} </button>
+  <button class="button is-link" @keydown="keyToDelete">
+    {{ symbol }}
+  </button>
 </template>
 
 <script>
 export default {
-  props: ["alph"],
-  methods: {
-    // keyToDelete () {
-    //   this.$emit('remove', this)
-    keyToDelete(event) {
-      if (event.key === this.alph) {
-        this.$emit("remove", data);
-      }
-    },
+  props: {
+    symbol: {
+      type: String,
+      default: 'A'
+    }
   },
-};
+  created () {
+    // eslint-disable-next-line nuxt/no-globals-in-created
+    window.addEventListener('keydown', (e) => {
+      if (e.key === this.symbol) {
+        this.$emit('remove')
+      }
+    })
+  }
+}
 </script>
 
 <style scoped>
