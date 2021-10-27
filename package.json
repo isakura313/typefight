@@ -17,7 +17,7 @@
     "@nuxtjs/bulma": "^1.3.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.5",
-    "vue-router": "^3.4.9",
+    "vue-router": "^3.5.3",
     "vuex": "^3.6.0"
   },
   "devDependencies": {
